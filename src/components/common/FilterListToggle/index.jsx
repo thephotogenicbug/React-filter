@@ -42,6 +42,7 @@ const FilterListToggle = ({ options, value, selectToggle }) => {
       value={value}
       onChange={selectToggle}
       className={classes.root}
+      exclusive
     >
       {options.map(({ label, id, value }) => (
         <ToggleButton className={classes.toggle} key={id} value={value}>
