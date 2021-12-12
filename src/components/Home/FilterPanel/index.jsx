@@ -2,6 +2,7 @@ import React from "react";
 import { categoryList, ratingList } from "../../../constants";
 import CheckBoxProton from "../../common/CheckBoxProton";
 import FilterListToggle from "../../common/FilterListToggle";
+import SliderProton from "../../common/SliderProton";
 import "./styles.css";
 
 const FilterPanel = ({
@@ -10,8 +11,9 @@ const FilterPanel = ({
   selectedRating,
   selectRating,
   cusines,
-  changeChecked
- 
+  changeChecked,
+  changedPrice,
+  selectedPrice,
 }) => {
   return (
     <div>
@@ -26,7 +28,6 @@ const FilterPanel = ({
       </div>
       {/* Cusines  */}
       <div className="input-group">
-        <p className="label">Cusines</p>
         {cusines.map((cuisine) => (
           <CheckBoxProton
             key={cuisine.id}
@@ -36,6 +37,10 @@ const FilterPanel = ({
         ))}
       </div>
       {/* price range  */}
+      <div className="input-group">
+        <p className="label-range">Cusines</p>
+        <SliderProton value={selectedPrice} changedPrice={changedPrice} />
+      </div>
       {/* star rating  */}
       <div className="input-group">
         <p className="label">Star Rating</p>
